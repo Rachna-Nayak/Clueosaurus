@@ -14,6 +14,7 @@ const Navbar = () => {
           <Link to="/" className="hover:underline hover:text-gray-300">Home</Link>
           <Link to="/dictionary" className="hover:text-gray-300">Dictionary</Link>
           <Link to="/anagram-solver" className="hover:text-gray-300">Anagram Solver</Link>
+          <Link to="/word-search" className="hover:text-gray-300">Word Search</Link>
         </div>
       </div>
     </nav>

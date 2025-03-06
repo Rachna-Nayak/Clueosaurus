@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Dictionary from "./components/Dictionary";
 import AnagramSolver from "./components/AnagramSolver";
+import WordSearch from "./components/WordSearch";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/dictionary" element={<Dictionary />} />
           <Route path="/anagram-solver" element={<AnagramSolver />} />
+          <Route path="/word-search" element={<WordSearch />} />
+          <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
       </div>
     </Router>
