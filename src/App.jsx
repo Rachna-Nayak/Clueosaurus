@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Dictionary from "./components/Dictionary";
+import AnagramSolver from "./components/AnagramSolver";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dictionary" element={<Dictionary />} />
-          <Route path="/anagram-solver" element={<div className="text-center mt-10">Coming Soon...</div>} />
+          <Route path="/anagram-solver" element={<AnagramSolver />} />
         </Routes>
       </div>
     </Router>
