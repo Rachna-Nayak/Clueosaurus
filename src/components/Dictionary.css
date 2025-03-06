@@ -1,0 +1,85 @@
+/* Background Gradient */
+.dictionary-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #ecfdf5, #dbeafe); /* Light Green → Light Blue */
+    padding: 1.5rem;
+  }
+  
+  /* Dictionary Box */
+  .dictionary-box {
+    max-width: 32rem; /* Equivalent to max-w-lg */
+    width: 100%;
+    padding: 1.5rem;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border-radius: 1rem;
+  }
+  
+  /* Back Link */
+  .back-link {
+    color: #3b82f6; /* Tailwind's blue-500 */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Input & Button */
+  .input-field {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db; /* Gray-300 */
+    border-radius: 0.5rem;
+  }
+  
+  .search-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .search-button:hover {
+    background-color: #2563eb; /* Darker blue */
+  }
+  
+  /* Loading & Error Text */
+  .loading-text {
+    margin-top: 1rem;
+    text-align: center;
+    color: #6b7280; /* Gray-500 */
+  }
+  
+  .error-text {
+    margin-top: 1rem;
+    text-align: center;
+    color: #dc2626; /* Red-500 */
+  }
+  
+  /* Definition Display */
+  .definition-box {
+    margin-top: 1.5rem;
+  }
+  
+  .definition-word {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .definition-phonetic {
+    font-style: italic;
+    color: #6b7280;
+  }
+  
+  .definition-meaning {
+    margin-top: 0.5rem;
+  }
+  

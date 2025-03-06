@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Dictionary.css"; // Import the external CSS file
 
 const Dictionary = () => {
   const [word, setWord] = useState("");
@@ -30,42 +31,40 @@ const Dictionary = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-xl mt-10">
-      <Link to="/" className="text-blue-500 hover:underline">&larr; Back to Home</Link>
-      <h1 className="text-2xl font-bold text-center my-4">Dictionary</h1>
+    <div className="dictionary-container">
+      <div className="dictionary-box">
+        <h1 className="text-2xl font-bold text-center my-4">Dictionary</h1>
 
-      <div className="flex space-x-2">
-        <input
-          type="text"
-          value={word}
-          onChange={(e) => setWord(e.target.value)}
-          placeholder="Enter a word..."
-          className="w-full p-2 border border-gray-300 rounded-lg"
-        />
-        <button
-          onClick={fetchDefinition}
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-        >
-          Search
-        </button>
-      </div>
-
-      {loading && <p className="mt-4 text-center text-gray-500">Loading...</p>}
-      {error && <p className="mt-4 text-center text-red-500">{error}</p>}
-
-      {definition && (
-        <div className="mt-6">
-          <h2 className="text-xl font-bold">{definition.word}</h2>
-          <p className="italic text-gray-500">{definition.phonetic}</p>
-          <ul className="mt-2">
-            {definition.meanings.map((meaning, index) => (
-              <li key={index} className="mt-2">
-                <strong>{meaning.partOfSpeech}</strong>: {meaning.definitions[0].definition}
-              </li>
-            ))}
-          </ul>
+        <div className="flex space-x-2">
+          <input
+            type="text"
+            value={word}
+            onChange={(e) => setWord(e.target.value)}
+            placeholder="Enter a word..."
+            className="input-field"
+          />
+          <button onClick={fetchDefinition} className="search-button">
+            Search
+          </button>
         </div>
-      )}
+
+        {loading && <p className="loading-text">Loading...</p>}
+        {error && <p className="error-text">{error}</p>}
+
+        {definition && (
+          <div className="definition-box">
+            <h2 className="definition-word">{definition.word}</h2>
+            <p className="definition-phonetic">{definition.phonetic}</p>
+            <ul className="mt-2">
+              {definition.meanings.map((meaning, index) => (
+                <li key={index} className="definition-meaning">
+                  <strong>{meaning.partOfSpeech}</strong>: {meaning.definitions[0].definition}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

@@ -1,0 +1,66 @@
+/* Home Page Container */
+.home-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #ecfdf5, #dbeafe); /* Light Green → Light Blue */
+    color: #111827; /* Tailwind's gray-900 */
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Title */
+  .home-title {
+    font-size: 3rem; /* Equivalent to text-5xl */
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Subtitle */
+  .home-subtitle {
+    font-size: 1.125rem; /* Equivalent to text-lg */
+    max-width: 28rem; /* Equivalent to max-w-md */
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Button Container */
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  /* Buttons */
+  .home-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.75rem; /* Equivalent to rounded-xl */
+    color: white;
+    background-color: #2563eb; /* Tailwind's blue-600 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Equivalent to shadow-lg */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    text-decoration: none;
+  }
+  
+  /* Button Hover Effects */
+  .home-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .home-button.dictionary:hover {
+    background-color: #bfdbfe; /* Light Blue */
+    color: black;
+  }
+  
+  .home-button.anagram:hover,
+  .home-button.wordsearch:hover {
+    background-color: #fde047; /* Yellow */
+    color: black;
+  }
+  

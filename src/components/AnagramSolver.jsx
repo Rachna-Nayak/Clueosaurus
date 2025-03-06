@@ -1,5 +1,6 @@
 import { useState } from "react";
 import words from "word-list-json"; // Import words as an array
+import "./AnagramSolver.css"; // Import the CSS file
 
 const AnagramSolver = () => {
   const [inputLetters, setInputLetters] = useState("");
@@ -15,36 +16,37 @@ const AnagramSolver = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-bold text-center mb-4">Anagram Solver</h2>
+    <div className="anagram-page"> {/* Full page gradient background */}
+      <div className="anagram-container"> {/* White box for content */}
+        <h2 className="anagram-title">Anagram Solver</h2>
 
-      <div className="flex">
-        <input
-          type="text"
-          placeholder="Enter letters..."
-          className="flex-1 p-2 border rounded-l-lg"
-          value={inputLetters}
-          onChange={(e) => setInputLetters(e.target.value)}
-        />
-        <button onClick={findAnagrams} className="bg-blue-500 text-white px-4 py-2 rounded-r-lg">
-          Solve
-        </button>
-      </div>
+        <div className="input-container">
+          <input
+            type="text"
+            placeholder="Enter letters..."
+            className="anagram-input"
+            value={inputLetters}
+            onChange={(e) => setInputLetters(e.target.value)}
+          />
+          <button onClick={findAnagrams} className="anagram-button">
+            Solve
+          </button>
+        </div>
 
-      <div className="mt-4">
-        {anagrams.length > 0 ? (
-          <ul className="list-disc pl-6">
-            {anagrams.map((word, index) => (
-              <li key={index} className="text-gray-700">{word}</li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-gray-500">No anagrams found.</p>
-        )}
+        <div className="anagram-results">
+          {anagrams.length > 0 ? (
+            <ul className="anagram-list">
+              {anagrams.map((word, index) => (
+                <li key={index} className="anagram-item">{word}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="no-anagrams">No anagrams found.</p>
+          )}
+        </div>
       </div>
     </div>
   );
 };
 
 export default AnagramSolver;
-
