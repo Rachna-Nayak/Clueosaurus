@@ -1,70 +1,79 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import "./Dictionary.css"; // Import the external CSS file
 
 const Dictionary = () => {
   const [word, setWord] = useState("");
-  const [definition, setDefinition] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [data, setData] = useState(null);
+  const [error, setError] = useState("");
 
-  const fetchDefinition = async () => {
-    if (!word) return;
-    setLoading(true);
-    setError(null);
+  const fetchWordData = async () => {
+    setError("");
+    setData(null);
+
+    if (!word.trim()) return;
 
     try {
       const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-      const data = await response.json();
+      if (!response.ok) throw new Error("Word not found");
 
-      if (response.ok) {
-        setDefinition(data[0]);
-      } else {
-        setDefinition(null);
-        setError("Word not found. Try another.");
-      }
+      const result = await response.json();
+      setData(result); // Store full API response
     } catch (err) {
-      setError("An error occurred. Please try again.");
+      setError(err.message);
     }
-
-    setLoading(false);
   };
 
   return (
     <div className="dictionary-container">
-      <div className="dictionary-box">
-        <h1 className="text-2xl font-bold text-center my-4">Dictionary</h1>
+      <h2 className="text-2xl font-bold mb-4">Dictionary</h2>
 
-        <div className="flex space-x-2">
-          <input
-            type="text"
-            value={word}
-            onChange={(e) => setWord(e.target.value)}
-            placeholder="Enter a word..."
-            className="input-field"
-          />
-          <button onClick={fetchDefinition} className="search-button">
-            Search
-          </button>
-        </div>
-
-        {loading && <p className="loading-text">Loading...</p>}
-        {error && <p className="error-text">{error}</p>}
-
-        {definition && (
-          <div className="definition-box">
-            <h2 className="definition-word">{definition.word}</h2>
-            <p className="definition-phonetic">{definition.phonetic}</p>
-            <ul className="mt-2">
-              {definition.meanings.map((meaning, index) => (
-                <li key={index} className="definition-meaning">
-                  <strong>{meaning.partOfSpeech}</strong>: {meaning.definitions[0].definition}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+      <div className="input-container">
+        <input
+          type="text"
+          placeholder="Enter a word..."
+          className="input"
+          value={word}
+          onChange={(e) => setWord(e.target.value)}
+        />
+        <button onClick={fetchWordData} className="btn">
+          Search
+        </button>
       </div>
+
+      {error && <p className="error-text">{error}</p>}
+
+      {data && (
+        <div className="result-container">
+          {data.map((entry, entryIndex) => (
+            <div key={entryIndex} className="entry">
+              <h3 className="text-xl font-semibold">{entry.word}</h3>
+
+              {entry.meanings.map((meaning, meaningIndex) => (
+                <div key={meaningIndex} className="meaning-box">
+                  <p className="part-of-speech">{meaning.partOfSpeech}</p>
+
+                  {meaning.definitions.map((def, defIndex) => (
+                    <p key={defIndex} className="definition">
+                      {defIndex + 1}. {def.definition}
+                    </p>
+                  ))}
+
+                  {meaning.synonyms.length > 0 && (
+                    <p className="synonyms">
+                      <strong>Synonyms:</strong> {meaning.synonyms.join(", ")}
+                    </p>
+                  )}
+
+                  {meaning.antonyms.length > 0 && (
+                    <p className="antonyms">
+                      <strong>Antonyms:</strong> {meaning.antonyms.join(", ")}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
