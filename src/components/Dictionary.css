@@ -1,80 +1,64 @@
-/* Background Gradient */
-.dictionary-container {
-  min-height: 100vh;
+/* Full Page Background */
+.dictionary-page {
+  min-height: 100vh; /* Full screen height */
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom right, #ecfdf5, #dbeafe); /* Light Green → Light Blue */
-  padding: 1.5rem;
+  align-items: center;
+  background: linear-gradient(to bottom right, #ecfdf5, #dbeafe); /* Light green → Light blue */
+  padding: 2rem;
 }
 
 /* Dictionary Box */
-.dictionary-box {
+.dictionary-container {
   max-width: 32rem; /* Equivalent to max-w-lg */
   width: 100%;
   padding: 1.5rem;
-  background-color: white;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  border-radius: 1rem;
+  background: white; /* White box */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-lg */
+  border-radius: 0.75rem; /* Equivalent to rounded-lg */
   text-align: center;
 }
 
-/* Back Link */
-.back-link {
-  color: #3b82f6; /* Tailwind's blue-500 */
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
+/* Title */
+.dictionary-title {
+  font-size: 1.75rem; /* Equivalent to text-2xl */
+  font-weight: 700; /* Equivalent to font-bold */
+  margin-bottom: 1rem;
 }
 
-.back-link:hover {
-  text-decoration: underline;
-}
-
-/* Input & Button */
+/* Input & Button Container */
 .input-container {
   display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 1rem;
+  align-items: center;
 }
 
-.input-field {
-  width: 100%;
+/* Input Field */
+.dictionary-input {
+  flex: 1;
   padding: 0.5rem;
-  border: 1px solid #d1d5db; /* Gray-300 */
-  border-radius: 0.5rem;
+  border: 1px solid #d1d5db; /* Tailwind's border-gray-300 */
+  border-radius: 0.5rem 0 0 0.5rem;
+  font-size: 1rem;
 }
 
+/* Search Button */
 .search-button {
-  background-color: #3b82f6;
+  background-color: #2563eb; /* Tailwind's blue-500 */
   color: white;
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-size: 1rem;
   transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .search-button:hover {
-  background-color: #2563eb; /* Darker blue */
-}
-
-/* Loading & Error Text */
-.loading-text {
-  margin-top: 1rem;
-  text-align: center;
-  color: #6b7280; /* Gray-500 */
-}
-
-.error-text {
-  margin-top: 1rem;
-  text-align: center;
-  color: #dc2626; /* Red-500 */
+  background-color: #3b82f6; /* Tailwind's blue-600 */
 }
 
 /* Definition Display */
 .definition-box {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   text-align: left;
 }
 
