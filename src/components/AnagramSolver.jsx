@@ -7,7 +7,7 @@ const AnagramSolver = () => {
   const [anagrams, setAnagrams] = useState([]);
 
   const findAnagrams = () => {
-    const sortedInput = inputLetters.split("").sort().join(""); // Sort input letters
+    const sortedInput = inputLetters.split("").toLowerCase().sort().join(""); // Sort input letters
     const results = words.filter((word) => {
       return word.length <= inputLetters.length && word.split("").sort().join("") === sortedInput;
     });
