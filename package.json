@@ -16,10 +16,12 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.2.0",
+    "vite-plugin-svgr": "^4.3.0",
     "word-list-json": "^0.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
+    "@svgr/webpack": "^8.1.0",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react-swc": "^3.5.0",

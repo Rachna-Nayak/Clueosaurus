@@ -1,77 +1,118 @@
 /* Full Page Background */
 .wordsearch-page {
-    min-height: 100vh; /* Full screen height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to bottom right, #ecfdf5, #dbeafe); /* Light green → Light blue */
-    padding: 2rem;
-  }
-  
-  /* Word Search Box */
-  .wordsearch-container {
-    max-width: 32rem; /* Equivalent to max-w-lg */
-    width: 100%;
-    padding: 1.5rem;
-    background: white; /* White box */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-lg */
-    border-radius: 0.75rem; /* Equivalent to rounded-lg */
-    text-align: center;
-  }
-  
-  /* Title */
-  .wordsearch-title {
-    font-size: 1.75rem; /* Equivalent to text-2xl */
-    font-weight: 700; /* Equivalent to font-bold */
-    margin-bottom: 1rem;
-  }
-  
-  /* Input & Button Container */
-  .input-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Input Field */
-  .wordsearch-input {
-    flex: 1;
-    padding: 0.5rem;
-    border: 1px solid #d1d5db; /* Tailwind's border-gray-300 */
-    border-radius: 0.5rem 0 0 0.5rem;
-    font-size: 1rem;
-  }
-  
-  /* Search Button */
-  .wordsearch-button {
-    background-color: #2563eb; /* Tailwind's blue-500 */
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 0 0.5rem 0.5rem 0;
-    font-size: 1rem;
-    transition: background-color 0.3s ease-in-out;
-    cursor: pointer;
-  }
-  
-  .wordsearch-button:hover {
-    background-color: #3b82f6; /* Tailwind's blue-600 */
-  }
-  
-  /* Word Search Results */
-  .wordsearch-results {
-    margin-top: 1rem;
-  }
-  
-  .wordsearch-list {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    text-align: left;
-  }
-  
-  .wordsearch-item {
-    color: #374151; /* Tailwind's gray-700 */
-  }
-  
-  .no-results {
-    color: #6b7280; /* Tailwind's gray-500 */
-  }
-  
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #ecfdf5, #dbeafe);
+  padding: 2rem;
+}
+
+/* Dark Mode Background */
+.dark-mode {
+  background: #0c0414;
+  color: white;
+}
+
+/* Word Search Box */
+.wordsearch-container {
+  max-width: 32rem;
+  width: 100%;
+  padding: 1.5rem;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+/* Dark Mode Word Search Box */
+.dark-container {
+  background: #4f46e5;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Title */
+.wordsearch-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Dark Mode Title */
+.dark-item {
+  color: white;
+}
+
+/* Input & Button Container */
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Input Field */
+.wordsearch-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+/* Dark Mode Input */
+.dark-input {
+  background: #2a2a3c;
+  color: white;
+  border: 1px solid #4a4a6a;
+}
+
+/* Search Button */
+.wordsearch-button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.wordsearch-button:hover {
+  background-color: #3b82f6;
+}
+
+/* Dark Mode Button */
+.dark-button {
+  background-color: white;
+  color: #111827;
+}
+
+.dark-button:hover {
+  background: #0c0414;
+  color: white;
+}
+
+/* Word Search Results */
+.wordsearch-results {
+  margin-top: 1rem;
+}
+
+.wordsearch-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  text-align: left;
+}
+
+/* Dark Mode List */
+.dark-item {
+  color: white;
+}
+
+/* No Results */
+.no-results {
+  color: #6b7280;
+}
+
+/* Dark Mode No Results */
+.dark-item.no-results {
+  color: #b0b0d0;
+}

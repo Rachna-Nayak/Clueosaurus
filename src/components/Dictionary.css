@@ -105,3 +105,35 @@
 .synonyms strong, .antonyms strong {
   color: #2563eb;
 }
+
+
+.dark-mode {
+  /* background: #243040ec; */
+  background: #0c0414;
+}
+
+.dark-container {
+  background: #4f46e5; /*#1F2937;*/
+  color: white;
+  /* box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1); */
+  border: 2px solid white;
+}
+
+.dark-input {
+  background: #333;
+  color: white;
+  border: 1px solid white;
+}
+
+.dark-button {
+  background: white;
+  color: #333;
+}
+
+.dark-button:hover {
+  background: #1e40af;
+}
+
+.dark-item {
+  color: #ddd;
+}

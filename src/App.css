@@ -40,3 +40,26 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Default light mode styles */
+body {
+  background-color: #f8f9fa;
+  color: #222;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Dark mode navbar */
+body.dark-mode nav {
+  background-color: #1a1a2e;
+}
+
+/* Dark mode container */
+body.dark-mode .min-h-screen {
+  background-color: #121212;
+}
