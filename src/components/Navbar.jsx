@@ -22,7 +22,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             className="ml-4 px-3 py-1 border rounded flex items-center space-x-2"
             onClick={() => setDarkMode(!darkMode)}
           >
-            {/* <img src={darkModeIcon} alt="Dark mode" className="w-6 h-6" /> */}
             <span>{darkMode ? "To Light Mode" : "To Dark Mode"}</span>
           </button>
         </div>

@@ -58,11 +58,6 @@
   text-decoration: none;
 }
 
-/* Dark Mode Buttons */
-
-/* .dark-button:hover {
-  background-color: #2563eb; } */
-
 /* Button Hover Effects */
 .home-button:hover {
   transform: scale(1.05);
