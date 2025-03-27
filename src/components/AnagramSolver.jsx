@@ -9,11 +9,25 @@ const AnagramSolver = ({ darkMode }) => {
   const findAnagrams = () => {
     const sortedInput = inputLetters.split("").toLowerCase().sort().join(""); // Sort input letters
     const results = words.filter((word) => {
-      return word.length <= inputLetters.length && word.split("").sort().join("") === sortedInput;
+      return word.length <= inputLetters.length && word.toLowerCase().split("").sort().join("") === sortedInput;
     });
 
     setAnagrams(results);
   };
+  // const findAnagrams = () => {
+  //   const letters = inputLetters.toLowerCase().split(""); // Renamed the variable
+  //   const results = words.filter((word) => {
+  //     const wordLetters = word.toLowerCase().split("");
+  //     if (wordLetters.length !== letters.length) return false;
+  //     for (let i = 0; i < wordLetters.length; i++) {
+  //       if (letters.indexOf(wordLetters[i]) === -1) return false;
+  //       letters.splice(letters.indexOf(wordLetters[i]), 1);
+  //     }
+  //     return true;
+  //   });
+  
+  //   setAnagrams(results);
+  // };
 
   return (
     <div className={`anagram-page ${darkMode ? "dark-mode" : ""}`}> {/* Full page gradient background */}
@@ -35,11 +49,19 @@ const AnagramSolver = ({ darkMode }) => {
 
         <div className="anagram-results">
           {anagrams.length > 0 ? (
+            // <ul className="anagram-list">
+            //   {anagrams.map((word, index) => (
+            //     <li key={index} className={`anagram-item ${darkMode ? "dark-item" : ""}`}>{word}</li>
+            //   ))}
+            // </ul>
             <ul className="anagram-list">
-              {anagrams.map((word, index) => (
+            {anagrams.map((word, index) => {
+              console.log(word); // Log each anagram to the console
+              return (
                 <li key={index} className={`anagram-item ${darkMode ? "dark-item" : ""}`}>{word}</li>
-              ))}
-            </ul>
+              );
+            })}
+          </ul>
           ) : (
             <p className="no-anagrams">No anagrams found.</p>
           )}

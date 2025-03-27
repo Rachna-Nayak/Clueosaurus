@@ -143,14 +143,14 @@ const Dictionary = ({ darkMode }) => {
                 <h3 className={`definition-word ${darkMode ? "dark-item" : ""}`}>{entry.word}</h3>
 
                 {entry.phonetics.length > 0 && (
-                  <p className="definition-phonetic">
+                  <p className={`definition-phonetic ${darkMode ? "dark-heading" : ""}`}>
                     {entry.phonetics.find(p => p.text)?.text || ""}
                   </p>
                 )}
 
                 {entry.meanings.map((meaning, meaningIndex) => (
                   <div key={meaningIndex} className="meaning-box">
-                    <p className="part-of-speech">{meaning.partOfSpeech}</p>
+                    <p className={`part-of-speech ${darkMode ? "dark-heading":""}`}>{meaning.partOfSpeech}</p>
 
                     {meaning.definitions.map((def, defIndex) => (
                       <p key={defIndex} className={`definition ${darkMode ? "dark-item" : ""}`}>
@@ -161,14 +161,14 @@ const Dictionary = ({ darkMode }) => {
                 ))}
 
                 {entry.meanings.some((meaning) => meaning.synonyms.length > 0) && (
-                  <p className="synonyms">
+                  <p className={`synonyms ${darkMode ?  "dark-synonym" : ""}`}>
                     <strong>Synonyms:</strong>{" "}
                     {entry.meanings.flatMap((meaning) => meaning.synonyms).join(", ") || "None"}
                   </p>
                 )}
 
                 {entry.meanings.some((meaning) => meaning.antonyms.length > 0) && (
-                  <p className="antonyms">
+                  <p className={`antonyms ${darkMode ?  "dark-antonym" : ""}`}>
                     <strong>Antonyms:</strong>{" "}
                     {entry.meanings.flatMap((meaning) => meaning.antonyms).join(", ") || "None"}
                   </p>

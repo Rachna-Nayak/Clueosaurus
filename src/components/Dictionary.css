@@ -8,6 +8,16 @@
   padding: 2rem;
 }
 
+.dark-antonym{
+  color: #0c0414;
+  text-shadow: -0.25px -1px 0 #fff, 0.25px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+.dark-synonym{
+  color: #0c0414;
+  text-shadow: -0.25px -1px 0 #fff, 0.25px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
 /* Dictionary Box */
 .dictionary-container {
   max-width: 32rem; /* Equivalent to max-w-lg */
@@ -120,7 +130,7 @@
 }
 
 .dark-input {
-  background: #333;
+  background: #0c0414;
   color: white;
   border: 1px solid white;
 }
@@ -137,3 +147,9 @@
 .dark-item {
   color: #ddd;
 }
+
+.dark-heading{
+  color: #0c0414;
+  text-shadow: -0.5px -1px 0 #fff, 0.5px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+

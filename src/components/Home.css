@@ -60,8 +60,8 @@
 
 /* Dark Mode Buttons */
 .dark-button {
-  background-color: white; 
-  color: #111827;
+  background-color: #4f46e5;
+  color: white;
 }
 
 /* .dark-button:hover {
@@ -72,14 +72,10 @@
   transform: scale(1.05);
 }
 
-.home-button.dictionary:hover {
-  background-color: #bfdbfe;
-  color: black;
-}
-
+.home-button.dictionary:hover,
 .home-button.anagram:hover,
 .home-button.wordsearch:hover {
-  background-color: #fde047;
+  background-color: white;
   color: black;
 }
 
@@ -87,7 +83,7 @@
 .dark-button.dictionary:hover,
 .dark-button.anagram:hover,
 .dark-button.wordsearch:hover {
-  background-color: #4f46e5;
-  color: white;
+  background-color: white; 
+  color: #111827;
 }
 

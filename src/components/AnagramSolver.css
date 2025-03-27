@@ -68,11 +68,11 @@
   }
   
   .anagram-item {
-    color: #374151; /* Tailwind's gray-700 */
+    color: #374151; 
   }
   
   .no-anagrams {
-    color: white; /* Tailwind's gray-500 */
+    color: black;
   }
   
   .dark-mode {
